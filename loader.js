@@ -1,6 +1,6 @@
 var flag=1;
 
-function load_page(path,folder,type,param,div) {
+function load_page(path,folder,file,param,div) {
 	var cont = document.getElementById(div);
 	var loading = "<div class=load_module>Loading...</div>";
 	cont.innerHTML = loading;
@@ -12,7 +12,7 @@ function load_page(path,folder,type,param,div) {
 if( http ) 
 {
    
-	http.open('get',path+'/'+folder+'/'+type+'.php'+param, true);
+	http.open('get',path+'/'+folder+'/'+file+param, true);
 	http.onreadystatechange = function () 
 	{
 		if(http.readyState == 4) {
@@ -39,8 +39,6 @@ else
 	document.location = link;
 }
 }
-
-
 
 
 function createRequestObject() 
